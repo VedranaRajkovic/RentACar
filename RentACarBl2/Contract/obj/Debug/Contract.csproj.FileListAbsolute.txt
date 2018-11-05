@@ -1,0 +1,5 @@
+C:\Users\Vedrana\Desktop\BLOK2 vjezbe\ProjekatRentACarBl2\RentACarBl2\Contract\bin\Debug\Contract.dll
+C:\Users\Vedrana\Desktop\BLOK2 vjezbe\ProjekatRentACarBl2\RentACarBl2\Contract\bin\Debug\Contract.pdb
+C:\Users\Vedrana\Desktop\BLOK2 vjezbe\ProjekatRentACarBl2\RentACarBl2\Contract\obj\Debug\Contract.csprojResolveAssemblyReference.cache
+C:\Users\Vedrana\Desktop\BLOK2 vjezbe\ProjekatRentACarBl2\RentACarBl2\Contract\obj\Debug\Contract.dll
+C:\Users\Vedrana\Desktop\BLOK2 vjezbe\ProjekatRentACarBl2\RentACarBl2\Contract\obj\Debug\Contract.pdb

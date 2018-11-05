@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Korisnik xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Ime>Jelena</Ime>
+  <Prezime>Ilic</Prezime>
+  <Username>jeca</Username>
+  <Password>123</Password>
+  <Ovlascenje>korisnik</Ovlascenje>
+</Korisnik><?xml version="1.0" encoding="utf-8"?>
+<Korisnik xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Ime>Ivan</Ime>
+  <Prezime>Janjic</Prezime>
+  <Username>ive01</Username>
+  <Password>456</Password>
+  <Ovlascenje>korisnik</Ovlascenje>
+</Korisnik><?xml version="1.0" encoding="utf-8"?>
+<Admin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Ime>Sandra</Ime>
+  <Prezime>Jelic</Prezime>
+  <Username>admin</Username>
+  <Password>admin</Password>
+  <Ovlascenje>administrator</Ovlascenje>
+</Admin>
