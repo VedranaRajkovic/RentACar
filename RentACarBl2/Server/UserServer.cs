@@ -10,15 +10,16 @@ namespace Server
 {
     class UserServer : IUserServer
     {
+        //treba i za admina 
         public string Authenticate(string user, string pass)
         {
             Console.WriteLine("Authenticaticating...");
 
-            if (ServerDatabase.Users.ContainsKey(user))
+            if (ServerDatabase.Korisnici.ContainsKey(user))
             {
-                if (ServerDatabase.Users[user].Password == pass)
+                if (ServerDatabase.Korisnici[user].Password == pass)
                 {
-                    ServerDatabase.Users[user].Authenticated = true;
+                    ServerDatabase.Korisnici[user].Authenticated = true;
                     return "Success";
                 }
                 else
@@ -36,8 +37,8 @@ namespace Server
             }
         }
         public static bool IsUserAuthenticated(string username) {
-            if (ServerDatabase.Users.ContainsKey(username)) {
-                return ServerDatabase.Users[username].Authenticated;
+            if (ServerDatabase.Korisnici.ContainsKey(username)) {
+                return ServerDatabase.Korisnici[username].Authenticated;
             }
             else
             {
@@ -46,8 +47,8 @@ namespace Server
         }
 
         public static bool IsUserAuthorized(string username, ERights right) {
-            if (ServerDatabase.Users.ContainsKey(username)){
-                return ServerDatabase.Users[username].HasRight(right);
+            if (ServerDatabase.Korisnici.ContainsKey(username)){
+                return ServerDatabase.Korisnici[username].HasRight(right);
             }
             else
             {

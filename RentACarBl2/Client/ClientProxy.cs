@@ -61,6 +61,36 @@ namespace Client
             throw new NotImplementedException();
         }
 
+        public bool Login(string username, string password)
+        {
+            bool result = false;
+            try
+            {
+                result = factory.Login(username, password);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: {0}", e.Message);
+            }
+
+            return result;
+        }
+
+        public bool Logout(string username)
+        {
+            bool result = false;
+            try
+            {
+                result = factory.Logout(username);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: {0}", e.Message);
+            }
+
+            return result;
+        }
+
         public void ObrisiKorisnika(Korisnik korisnik)
         {
             throw new NotImplementedException();

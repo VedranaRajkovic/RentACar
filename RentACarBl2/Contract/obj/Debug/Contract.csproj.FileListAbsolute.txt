@@ -3,3 +3,8 @@ C:\Users\Vedrana\Desktop\BLOK2 vjezbe\ProjekatRentACarBl2\RentACarBl2\Contract\b
 C:\Users\Vedrana\Desktop\BLOK2 vjezbe\ProjekatRentACarBl2\RentACarBl2\Contract\obj\Debug\Contract.csprojResolveAssemblyReference.cache
 C:\Users\Vedrana\Desktop\BLOK2 vjezbe\ProjekatRentACarBl2\RentACarBl2\Contract\obj\Debug\Contract.dll
 C:\Users\Vedrana\Desktop\BLOK2 vjezbe\ProjekatRentACarBl2\RentACarBl2\Contract\obj\Debug\Contract.pdb
+C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\Contract\bin\Debug\Contract.dll
+C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\Contract\bin\Debug\Contract.pdb
+C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\Contract\obj\Debug\Contract.csprojResolveAssemblyReference.cache
+C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\Contract\obj\Debug\Contract.dll
+C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\Contract\obj\Debug\Contract.pdb

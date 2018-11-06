@@ -11,8 +11,9 @@ namespace Contract
     [ServiceContract]
     public interface IUserServer
     {
+        //metode za realizaciju bezbjednosne provjere, autentifikacija i autorizacija
         [OperationContract]
         [FaultContract(typeof(SecurityException))]
-        string Authenticate(string user, string pass);
+        string Authenticate(string user, string pass); 
     }
 }

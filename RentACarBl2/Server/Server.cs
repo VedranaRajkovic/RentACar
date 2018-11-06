@@ -129,14 +129,14 @@ namespace Server
             {
                 foreach (Korisnik k in items.Values)
                     serializer.Serialize(textWriter, k);
-                foreach (Admin a in itemsA.Values)     
-                serializer1.Serialize(textWriter, a);
+                foreach (Admin a in itemsA.Values)
+                    serializer1.Serialize(textWriter, a);
 
             }
-               
+
         }
 
-     
+
         public void SerializacijaAuta()
         {
 
@@ -150,6 +150,14 @@ namespace Server
 
         }
 
+        public bool Login(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
 
+        public bool Logout(string username)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

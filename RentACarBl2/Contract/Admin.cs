@@ -11,7 +11,8 @@ namespace Contract
     [DataContract]
     public class Admin
     {
-        
+        string password = string.Empty;
+        bool _authenticated;
         [DataMember]
         [XmlElement]
         public string Ime { get; set; }
@@ -31,6 +32,11 @@ namespace Contract
         [DataMember]
         [XmlElement]
         public string Ovlascenje { get; set; }
-
+        [DataMember]
+        public bool Authenticated
+        {
+            get { return _authenticated; }
+            set { _authenticated = value; }
+        }
     }
 }

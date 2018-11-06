@@ -12,19 +12,29 @@ namespace Client
     {
        private static void Main(string[] args)
         {
-            ChannelFactory<IServer> factory = new ChannelFactory<IServer>(new NetTcpBinding(), new EndpointAddress("net.tcp://localhost:4000/IServer"));
-            IServer proxy = factory.CreateChannel();
-            //NetTcpBinding binding = new NetTcpBinding();
-            //string address = "net.tcp://localhost:4000/IServer";
-            //using (ClientProxy proxy = new ClientProxy(binding, address))
-            //{
-            Korisnik k1 = new Korisnik();
+            //ChannelFactory<IServer> factory = new ChannelFactory<IServer>(new NetTcpBinding(), new EndpointAddress("net.tcp://localhost:4000/IServer"));
+            //IServer proxy = factory.CreateChannel();
+
+            NetTcpBinding binding = new NetTcpBinding();
+            binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Windows; //dodajem zbog autentifikacije
+            string address = "net.tcp://localhost:4000/IServer";
+            using (ClientProxy proxy = new ClientProxy(binding, address))
+            {
+                Console.WriteLine("Unesite username:");
+                string user = "";
+                user = Console.ReadLine();
+                Console.WriteLine("Unesite password:");
+                string pass = "";
+                pass = Console.ReadLine();
+
+
+                Korisnik k1 = new Korisnik();
             k1.Ime = "Jelena";
             k1.Prezime = "Ilic";
             k1.Username = "jeca";
             k1.Password = "123";
             k1.Ovlascenje = "korisnik";
-
+            
             Korisnik k2 = new Korisnik();
             k2.Ime = "Ivan";
             k2.Prezime = "Janjic";
@@ -164,11 +174,11 @@ namespace Client
                 Console.WriteLine(ex.Detail.Reason);
             }
 
-          
+
             proxy.Serializacija();
             proxy.SerializacijaAuta();
-        //}
-        Console.ReadLine();
+            }
+            Console.ReadLine();
            
 
         }

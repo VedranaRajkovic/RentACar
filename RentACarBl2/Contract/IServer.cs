@@ -30,6 +30,11 @@ namespace Contract
             void Serializacija();
             [OperationContract]
             void SerializacijaAuta();
+            //dodajem prilikom autentifikacije
+            [OperationContract]
+            bool Login(string username, string password/*, string computerName*/);
+            [OperationContract]
+            bool Logout(string username);
     }
     }
 

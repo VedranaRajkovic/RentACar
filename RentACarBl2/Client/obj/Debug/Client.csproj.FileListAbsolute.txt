@@ -9,3 +9,8 @@ C:\Users\Vedrana\Desktop\BLOK2 vjezbe\ProjekatRentACarBl2\RentACarBl2\Client\obj
 C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\Client\bin\Debug\Client.exe.config
 C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\Client\obj\Debug\Client.exe
 C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\Client\obj\Debug\Client.pdb
+C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\Client\bin\Debug\Client.exe
+C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\Client\bin\Debug\Client.pdb
+C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\Client\bin\Debug\Contract.dll
+C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\Client\bin\Debug\Contract.pdb
+C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache

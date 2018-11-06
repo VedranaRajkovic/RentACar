@@ -1,0 +1,5 @@
+C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\SecurityManager\obj\Debug\SecurityManager.csprojResolveAssemblyReference.cache
+C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\SecurityManager\bin\Debug\SecurityManager.dll
+C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\SecurityManager\bin\Debug\SecurityManager.pdb
+C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\SecurityManager\obj\Debug\SecurityManager.dll
+C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\SecurityManager\obj\Debug\SecurityManager.pdb
