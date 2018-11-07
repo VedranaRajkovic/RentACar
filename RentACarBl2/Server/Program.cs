@@ -40,6 +40,19 @@ namespace Server
             //svc3 = new ServiceHost(typeof(DataAccessServer));
             //svc3.AddServiceEndpoint(typeof(IDataAccessServer), new NetTcpBinding(), new Uri("net.tcp://localhost:4000/IDataAccessServer"));
             //svc3.Open();
+
+            //3 vjezbe audit
+            ServiceSecurityAuditBehavior newAudit = new ServiceSecurityAuditBehavior();
+            newAudit.AuditLogLocation = AuditLogLocation.Application;
+            //newAudit.MessageAuthenticationAuditLevel = AuditLevel.SuccessOrFailure;
+            newAudit.ServiceAuthorizationAuditLevel = AuditLevel.SuccessOrFailure;
+            newAudit.SuppressAuditFailure = true;
+
+            svc.Description.Behaviors.Remove<ServiceSecurityAuditBehavior>();
+            svc.Description.Behaviors.Add(newAudit);
+
+            svc1.Description.Behaviors.Remove<ServiceSecurityAuditBehavior>();
+            svc1.Description.Behaviors.Add(newAudit);
             Console.WriteLine("WCF server ready and waiting for requests.");
            
 
