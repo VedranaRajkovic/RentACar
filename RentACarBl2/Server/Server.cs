@@ -26,7 +26,7 @@ namespace Server
 
         public void DodajKorisnika(Korisnik korisnik)
         {
-            if (items.ContainsKey(korisnik.Username))
+            if (items.ContainsKey(korisnik.User))
             {
 
                 NotFoundException ex = new NotFoundException("Korisnik sa tim user name-om vec postoji.");
@@ -34,7 +34,7 @@ namespace Server
             }
             else
             {
-                items.Add(korisnik.Username, korisnik);
+                items.Add(korisnik.User, korisnik);
                 Console.WriteLine(korisnik);
             }
         }
@@ -76,10 +76,10 @@ namespace Server
 
         public void IzmijeniKorisnika(Korisnik korisnik)
         {
-            if (items.ContainsKey(korisnik.Username))
+            if (items.ContainsKey(korisnik.User))
             {
                
-                items[korisnik.Username]=korisnik;
+                items[korisnik.User] =korisnik;
             }else
             {
                 NotFoundException ex = new NotFoundException("Korisnik ne postoji.");
@@ -89,9 +89,9 @@ namespace Server
 
         public void ObrisiKorisnika(Korisnik korisnik)
         {
-            if (items.ContainsKey(korisnik.Username))
+            if (items.ContainsKey(korisnik.User))
             {
-                items.Remove(korisnik.Username);
+                items.Remove(korisnik.User);
                 Console.WriteLine(korisnik);
             }
             else

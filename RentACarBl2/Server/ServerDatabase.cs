@@ -14,20 +14,20 @@ namespace Server
         public static readonly Dictionary<string, Korisnik> Korisnici = new Dictionary<string, Korisnik>();
         public static readonly Dictionary<string, Admin> Admin = new Dictionary<string, Admin>();
         //pravili smo prilikom autentifikacije, kasnije kada uvodimo permisije dodajemo ih korisnicima
-        public ServerDatabase() {
+        //public ServerDatabase() {
             
-            Console.WriteLine("Adding users to server...");
+        //    Console.WriteLine("Adding users to server...");
          
-            Korisnik k1 = new Korisnik();
-            //k1.Ime = "Jelena";
-            //k1.Prezime = "Ilic";
-            //k1.Username = "jeca";
-            //k1.Password = "123";
-            //k1.Ovlascenje = "korisnik";
-            k1.AddRight(ERights.Read);
-            k1.AddRight(ERights.Write);
-            k1.AddRight(ERights.ReadAll);
-            ServerDatabase.Korisnici.Add(k1.Username, k1);
+        //    Korisnik k1 = new Korisnik();
+        //    //k1.Ime = "Jelena";
+        //    //k1.Prezime = "Ilic";
+        //    //k1.Username = "jeca";
+        //    //k1.Password = "123";
+        //    //k1.Ovlascenje = "korisnik";
+        //    k1.AddRight(ERights.Read);
+        //    k1.AddRight(ERights.Write);
+        //    k1.AddRight(ERights.ReadAll);
+        //    ServerDatabase.Korisnici.Add(k1.Username, k1);
       
 
             //    MyUser admin = new MyUser("admin", "admin");
@@ -38,7 +38,7 @@ namespace Server
             //    ServerDatabase.Users.Add(admin.Username, admin);
             //}
            
-        }
+        //}
 
     }
     }

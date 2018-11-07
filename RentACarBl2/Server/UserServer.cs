@@ -10,6 +10,27 @@ namespace Server
 {
     class UserServer : IUserServer
     {
+        public UserServer()
+        {
+            Console.WriteLine("Adding users to server...");
+
+            Korisnik danka = new Korisnik("danka", "789");
+            danka.AddRight(ERights.Read);
+            ServerDatabase.Korisnici.Add(danka.User, danka);
+
+
+            //Korisnik marko = new Korisnik("marko", "321");
+            //marko.AddRight(ERights.Read);
+            //ServerDatabase.Korisnici.Add(marko.Username, marko);
+
+            Admin admin = new Admin("admin", "admin");
+
+            foreach (ERights right in Enum.GetValues(typeof(ERights))) //pay attention!
+            {
+                admin.AddRight(right);
+            }
+            ServerDatabase.Admin.Add(admin.Username, admin);
+        }
         //treba i za admina 
         public string Authenticate(string user, string pass)
         {
@@ -17,7 +38,7 @@ namespace Server
 
             if (ServerDatabase.Korisnici.ContainsKey(user))
             {
-                if (ServerDatabase.Korisnici[user].Password == pass)
+                if (ServerDatabase.Korisnici[user].Pass == pass) //Pass je iz klase Korisnik
                 {
                     ServerDatabase.Korisnici[user].Authenticated = true;
                     return "Success";

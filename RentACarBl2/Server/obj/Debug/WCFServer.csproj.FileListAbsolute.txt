@@ -16,3 +16,13 @@ C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\Server\obj\De
 C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\Server\obj\Debug\Server.pdb
 C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\Server\bin\Debug\SecurityManager.dll
 C:\Users\Vedrana\Source\Repos\VedranaRajkovic\RentACar\RentACarBl2\Server\bin\Debug\SecurityManager.pdb
+C:\Users\Vedrana\Source\Repos\RentACar2\RentACarBl2\Server\bin\Debug\Server.exe.config
+C:\Users\Vedrana\Source\Repos\RentACar2\RentACarBl2\Server\bin\Debug\Server.exe
+C:\Users\Vedrana\Source\Repos\RentACar2\RentACarBl2\Server\bin\Debug\Server.pdb
+C:\Users\Vedrana\Source\Repos\RentACar2\RentACarBl2\Server\bin\Debug\Contract.dll
+C:\Users\Vedrana\Source\Repos\RentACar2\RentACarBl2\Server\bin\Debug\SecurityManager.dll
+C:\Users\Vedrana\Source\Repos\RentACar2\RentACarBl2\Server\bin\Debug\Contract.pdb
+C:\Users\Vedrana\Source\Repos\RentACar2\RentACarBl2\Server\bin\Debug\SecurityManager.pdb
+C:\Users\Vedrana\Source\Repos\RentACar2\RentACarBl2\Server\obj\Debug\WCFServer.csprojResolveAssemblyReference.cache
+C:\Users\Vedrana\Source\Repos\RentACar2\RentACarBl2\Server\obj\Debug\Server.exe
+C:\Users\Vedrana\Source\Repos\RentACar2\RentACarBl2\Server\obj\Debug\Server.pdb

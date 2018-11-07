@@ -13,27 +13,29 @@ namespace Contract
     {
 
         bool _authenticated;
-        string password = string.Empty; //da se sifra ne bi skladistila u citljivom formatu, zbog bezbjednosti
+        string pass = string.Empty; //da se sifra ne bi skladistila u citljivom formatu, zbog bezbjednosti
         HashSet<ERights> _rights = new HashSet<ERights>();
-        [DataMember]
-        [XmlElement]
-        public string Ime { get; set; }
+
+
+        //[DataMember]
+        //[XmlElement]
+        //public string Ime { get; set; }
+
+        //[DataMember]
+        //[XmlElement]
+        //public string Prezime { get; set; }
 
         [DataMember]
         [XmlElement]
-        public string Prezime { get; set; }
+        public string User { get; set; }
 
         [DataMember]
         [XmlElement]
-        public string Username { get; set; }
+        public string Pass { get; set; }
 
-        [DataMember]
-        [XmlElement]
-        public string Password { get; set; }
-
-        [DataMember]
-        [XmlElement]
-        public string Ovlascenje { get; set; }
+        //[DataMember]
+        //[XmlElement]
+        //public string Ovlascenje { get; set; }
         [DataMember]
         public bool Authenticated
         {
@@ -49,6 +51,12 @@ namespace Contract
             //Password = pass;
 
 
+        }
+
+        public Korisnik(string user, string pass)
+        {
+            User = user;
+           Pass = pass;
         }
 
         //autorizacija
