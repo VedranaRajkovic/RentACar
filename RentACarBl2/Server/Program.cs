@@ -4,67 +4,49 @@ using Server;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
+using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
+using System.ServiceModel.Security;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Server
 {
-    class Program
+    public class Program
     {
-        private static ServiceHost svc = null;
-        private static ServiceHost svc1 = null;
-        //private static ServiceHost svc3 = null;
-        public static void Main(string[] args) {
-
-            Start();
-            Console.ReadKey(true);
-            Stop();
-           
-        }
-        private static void Start()
+        static void Main(string[] args)
         {
-            svc = new ServiceHost(typeof(Server));
-            svc.AddServiceEndpoint(typeof(IServer), new NetTcpBinding(), new Uri("net.tcp://localhost:4000/IServer"));
-            //svc.Authorization.ServiceAuthorizationManager = new CustomAuthorizationManager(); //iz drugih vjezbi
-            svc.Open();
-            svc1 = new ServiceHost(typeof(UserServer));
-            svc1.AddServiceEndpoint(typeof(IUserServer), new NetTcpBinding(), new Uri("net.tcp://localhost:4000/IUserServer"));
-            //svc1.Authorization.ServiceAuthorizationManager = new CustomAuthorizationManager(); //iz drugih vjezbi
+            //string servNameCrt = "wcfservice";
+            NetTcpBinding binding = new NetTcpBinding();
+            binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
+            string address = "net.tcp://localhost:4000/WCFServer";
+            ServiceHost host = new ServiceHost(typeof(Server));
 
-            //List<IAuthorizationPolicy> policies = new List<IAuthorizationPolicy>();
-            //policies.Add(new CustomAuthorizationPolicy());
-            //svc1.Authorization.ExternalAuthorizationPolicies = policies.AsReadOnly();
-            svc1.Open();
-            //svc3 = new ServiceHost(typeof(DataAccessServer));
-            //svc3.AddServiceEndpoint(typeof(IDataAccessServer), new NetTcpBinding(), new Uri("net.tcp://localhost:4000/IDataAccessServer"));
-            //svc3.Open();
+            host.AddServiceEndpoint(typeof(IServer), binding, address);
+            host.Credentials.ClientCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.Custom;
+            host.Credentials.ClientCertificate.Authentication.CustomCertificateValidator = new ServiceCertificateValidator();
+            host.Credentials.ClientCertificate.Authentication.RevocationMode = X509RevocationMode.NoCheck;
 
-            //3 vjezbe audit
-            ServiceSecurityAuditBehavior newAudit = new ServiceSecurityAuditBehavior();
-            newAudit.AuditLogLocation = AuditLogLocation.Application;
-            //newAudit.MessageAuthenticationAuditLevel = AuditLevel.SuccessOrFailure;
-            newAudit.ServiceAuthorizationAuditLevel = AuditLevel.SuccessOrFailure;
-            newAudit.SuppressAuditFailure = true;
+            host.Credentials.ServiceCertificate.Certificate = CertificateManager.GetCertificateFromStorage(StoreName.My, StoreLocation.CurrentUser, "wcfservice");
 
-            svc.Description.Behaviors.Remove<ServiceSecurityAuditBehavior>();
-            svc.Description.Behaviors.Add(newAudit);
 
-            svc1.Description.Behaviors.Remove<ServiceSecurityAuditBehavior>();
-            svc1.Description.Behaviors.Add(newAudit);
-            Console.WriteLine("WCF server ready and waiting for requests.");
-           
-
+            try
+            {
+                host.Open();
+                Console.WriteLine("WCFService is started.\nPress <enter> to stop ...");
+                Console.ReadLine();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("[ERROR] {0}", e.Message);
+                Console.WriteLine("[StackTrace] {0}", e.StackTrace);
+            }
+            finally
+            {
+                host.Close();
+            }
         }
-      
-        private static void Stop()
-        {
-            svc.Close();
-            svc1.Close();
-            //svc3.Close();
-            Console.WriteLine("WCF server stopped.");
-        }
-      
     }
 }

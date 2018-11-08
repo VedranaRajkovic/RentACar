@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,12 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccessServer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Server.cs" />
-    <Compile Include="ServerDatabase.cs" />
-    <Compile Include="UserServer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -60,7 +58,7 @@
       <Name>Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\SecurityManager\SecurityManager.csproj">
-      <Project>{E6CFC481-2F45-4443-91A8-1BE59E72FAAC}</Project>
+      <Project>{191ECB97-36BA-40F5-B52E-B03A355040D3}</Project>
       <Name>SecurityManager</Name>
     </ProjectReference>
   </ItemGroup>
