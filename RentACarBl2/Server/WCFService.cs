@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-    class Server : IServer
+    class WCFService : IServer
     {
-        public void TestCommunication()
+        public string ispisi(int a)
         {
-            throw new NotImplementedException();
+            return null;
         }
     }
 }

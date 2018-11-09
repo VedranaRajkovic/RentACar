@@ -19,10 +19,9 @@ namespace Client
             string OU2 = "admin";
             NetTcpBinding binding = new NetTcpBinding();
             binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
-            string machine = "localhost";
             X509Certificate2 srvCert = CertificateManager.GetSingleCertificate(StoreName.My, StoreLocation.LocalMachine, srvCertCN,OU1,OU2);
-            EndpointAddress address = new EndpointAddress(new Uri(String.Format("net.tcp://{0}:202/WCFServer", machine)),
-                                      new X509CertificateEndpointIdentity(srvCert));
+            EndpointAddress address = new EndpointAddress(new Uri("net.tcp://localhost:4000/WCFService"), //EndPointIdentity zbog obostrane autentifikacije
+                                      new X509CertificateEndpointIdentity(srvCert)); //cer format sertifikata, jer klijent ne smije imati pristup pfx fajlu
         }
             
 

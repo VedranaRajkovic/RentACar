@@ -10,7 +10,8 @@ namespace Contract
     [ServiceContract]
    public interface IServer
     {
+
         [OperationContract]
-        void TestCommunication();
+        string ispisi(int a);
     }
 }
