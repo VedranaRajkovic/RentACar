@@ -30,7 +30,8 @@ namespace SecurityManager
 
         public static X509Certificate2 GetSingleCertificate(StoreName storeName, StoreLocation storeLocation, string srvCertCN,string OU1,string OU2) //dodajem organization unit kao parametre
         {
-            string userCN = String.Format("CN={0}","OU={1}","OU={2}");
+            //string userCN = String.Format("CN={0}","OU={1}","OU={2}");
+            string userCN = "CN=" + srvCertCN;
             X509Store store = new X509Store(storeName, storeLocation);
             store.Open(OpenFlags.ReadOnly);
             X509Certificate2 certificate = new X509Certificate2();

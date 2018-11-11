@@ -20,7 +20,7 @@ namespace Client
             : base(binding, address)
         {
             //definisanje tipa validacije sertifikata
-            this.Credentials.ServiceCertificate.Authentication.CertificateValidationMode = System.ServiceModel.Security.X509CertificateValidationMode.ChainTrust;
+            this.Credentials.ServiceCertificate.Authentication.CertificateValidationMode = System.ServiceModel.Security.X509CertificateValidationMode.Custom;
             this.Credentials.ServiceCertificate.Authentication.CustomCertificateValidator = new ClientCertificateValidator();
             this.Credentials.ServiceCertificate.Authentication.RevocationMode = X509RevocationMode.NoCheck;
             this.Credentials.ClientCertificate.Certificate = CertificateManager.GetSingleCertificate(StoreName.My, StoreLocation.LocalMachine,cliNameCrt,OU1,OU2);
@@ -29,7 +29,15 @@ namespace Client
 
         public string ispisi(int a)
         {
-            throw new NotImplementedException();
+            try
+            {
+                string res = factory.ispisi(a);
+                return res;
+            }
+            catch (Exception e )
+            {
+                return null;
+            }
         }
     }
 }
