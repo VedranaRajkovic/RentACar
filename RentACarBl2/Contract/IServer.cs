@@ -12,6 +12,6 @@ namespace Contract
     {
 
         [OperationContract]
-        string ispisi(int a);
+        string ispisi(string ime,string pass);
     }
 }

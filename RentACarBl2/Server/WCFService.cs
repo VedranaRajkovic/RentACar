@@ -1,4 +1,5 @@
 ﻿using Contract;
+using SecurityManager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,11 @@ namespace Server
 {
     class WCFService : IServer
     {
-        public string ispisi(int a)
+        public string ispisi(string ime,string pass)
         {
+
+            Console.WriteLine(ime,pass);
+            Audit a = new Audit();
             return null;
         }
     }

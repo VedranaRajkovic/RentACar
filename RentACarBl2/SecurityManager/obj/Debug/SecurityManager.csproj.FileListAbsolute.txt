@@ -14,3 +14,8 @@ C:\Users\Vedrana\Desktop\RentACar2\RentACarBl2\SecurityManager\bin\Debug\Securit
 C:\Users\Vedrana\Desktop\RentACar2\RentACarBl2\SecurityManager\obj\Debug\SecurityManager.csprojResolveAssemblyReference.cache
 C:\Users\Vedrana\Desktop\RentACar2\RentACarBl2\SecurityManager\obj\Debug\SecurityManager.dll
 C:\Users\Vedrana\Desktop\RentACar2\RentACarBl2\SecurityManager\obj\Debug\SecurityManager.pdb
+C:\Users\Vedrana\Source\Repos\RentACar3\RentACarBl2\SecurityManager\bin\Debug\SecurityManager.dll
+C:\Users\Vedrana\Source\Repos\RentACar3\RentACarBl2\SecurityManager\bin\Debug\SecurityManager.pdb
+C:\Users\Vedrana\Source\Repos\RentACar3\RentACarBl2\SecurityManager\obj\Debug\SecurityManager.csprojResolveAssemblyReference.cache
+C:\Users\Vedrana\Source\Repos\RentACar3\RentACarBl2\SecurityManager\obj\Debug\SecurityManager.dll
+C:\Users\Vedrana\Source\Repos\RentACar3\RentACarBl2\SecurityManager\obj\Debug\SecurityManager.pdb

@@ -24,3 +24,8 @@ C:\Users\Vedrana\Desktop\RentACar2\RentACarBl2\Contract\bin\Debug\Contract.pdb
 C:\Users\Vedrana\Desktop\RentACar2\RentACarBl2\Contract\obj\Debug\Contract.csprojResolveAssemblyReference.cache
 C:\Users\Vedrana\Desktop\RentACar2\RentACarBl2\Contract\obj\Debug\Contract.dll
 C:\Users\Vedrana\Desktop\RentACar2\RentACarBl2\Contract\obj\Debug\Contract.pdb
+C:\Users\Vedrana\Source\Repos\RentACar3\RentACarBl2\Contract\bin\Debug\Contract.dll
+C:\Users\Vedrana\Source\Repos\RentACar3\RentACarBl2\Contract\bin\Debug\Contract.pdb
+C:\Users\Vedrana\Source\Repos\RentACar3\RentACarBl2\Contract\obj\Debug\Contract.csprojResolveAssemblyReference.cache
+C:\Users\Vedrana\Source\Repos\RentACar3\RentACarBl2\Contract\obj\Debug\Contract.dll
+C:\Users\Vedrana\Source\Repos\RentACar3\RentACarBl2\Contract\obj\Debug\Contract.pdb

@@ -27,11 +27,11 @@ namespace Client
             factory = this.CreateChannel();
         }
 
-        public string ispisi(int a)
+        public string ispisi(string ime,string pass)
         {
             try
             {
-                string res = factory.ispisi(a);
+                string res = factory.ispisi(ime,pass);
                 return res;
             }
             catch (Exception e )
