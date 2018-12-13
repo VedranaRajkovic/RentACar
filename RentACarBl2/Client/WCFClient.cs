@@ -14,8 +14,8 @@ namespace Client
     {
         IServer factory;
         string cliNameCrt = "wcfclient";
-        string OU1 = "korisnik";
-        string OU2 = "admin";
+        string OU1 = "admin";
+        string OU2 = "clan";
         public WCFClient(NetTcpBinding binding, EndpointAddress address)
             : base(binding, address)
         {
@@ -23,7 +23,7 @@ namespace Client
             this.Credentials.ServiceCertificate.Authentication.CertificateValidationMode = System.ServiceModel.Security.X509CertificateValidationMode.Custom;
             this.Credentials.ServiceCertificate.Authentication.CustomCertificateValidator = new ClientCertificateValidator();
             this.Credentials.ServiceCertificate.Authentication.RevocationMode = X509RevocationMode.NoCheck;
-            this.Credentials.ClientCertificate.Certificate = CertificateManager.GetSingleCertificate(StoreName.My, StoreLocation.LocalMachine,cliNameCrt,OU1,OU2);
+            this.Credentials.ClientCertificate.Certificate = CertificateManager.GetSingleCertificateFromStorage(StoreName.My, StoreLocation.LocalMachine,cliNameCrt,OU1,OU2);
             factory = this.CreateChannel();
         }
 

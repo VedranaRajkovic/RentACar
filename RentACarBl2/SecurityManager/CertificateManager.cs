@@ -9,9 +9,9 @@ namespace SecurityManager
 {
     public class CertificateManager
     {
-        string tpservera = "INVISIBLECHARACTER433a665ca285e4251815509efd4138f22966f247";
-        string tpklijenta = "INVISIBLECHARACTER67416e1328388ecd1f229ace08a6fabca7f400fa";
-        public static X509Certificate2 GetCertificateFromStorage(StoreName storeName, StoreLocation storeLocation, string subjectName, string tpklijenta, string tpservera)
+        //string tpservera = "INVISIBLECHARACTER433a665ca285e4251815509efd4138f22966f247";
+        //string tpklijenta = "INVISIBLECHARACTER67416e1328388ecd1f229ace08a6fabca7f400fa";
+        public static X509Certificate2 GetCertificateFromStorage(StoreName storeName, StoreLocation storeLocation, string subjectName)
         {
             //X509Certificate2Collection certCollection = store.Certificates.Find(X509FindType.FindBySubjectName, subjectName, true);
            
@@ -29,31 +29,15 @@ namespace SecurityManager
                 //return null;
             }
 
-            X509Certificate2Collection certCollection1 = store.Certificates.Find(X509FindType.FindByThumbprint, tpklijenta, true);
-            foreach (X509Certificate2 cert in certCollection1)
-            {
-                if (cert.Thumbprint.Equals(string.Format("tpklijenta={1}", tpklijenta)))
-                {
-                    return cert;
-                }
-                //return null;
-            }
-
-            X509Certificate2Collection certCollection2 = store.Certificates.Find(X509FindType.FindByThumbprint, tpservera, true);
-            foreach (X509Certificate2 cert in certCollection2)
-            {
-                if (cert.Thumbprint.Equals(string.Format("tpservera={2}", tpservera)))
-                {
-                    return cert;
-                }
-            }
+         
+            
                 //    //return null;
                 //}
                 return null;
 
         }
 
-        public static X509Certificate2 GetSingleCertificate(StoreName storeName, StoreLocation storeLocation, string srvCertCN, string OU1, string OU2) //dodajem organization unit kao parametre
+        public static X509Certificate2 GetSingleCertificateFromStorage(StoreName storeName, StoreLocation storeLocation, string srvCertCN, string OU1, string OU2) //dodajem organization unit kao parametre
         {
             //string userCN = String.Format("CN={0}","OU={1}","OU={2}");
             string userCN = "CN=" + srvCertCN;

@@ -11,13 +11,13 @@ namespace SecurityManager
     public class ServiceCertificateValidator : X509CertificateValidator
     {
         string cliNameCrt = "wcfclient";
-        string OU1 = "korisnik";
-        string OU2 = "admin";
+        string OU1 = "admin";
+        string OU2 = "clan";
         //string tpservera = "INVISIBLECHARACTER433a665ca285e4251815509efd4138f22966f247";
         //string tpklijenta = "INVISIBLECHARACTER67416e1328388ecd1f229ace08a6fabca7f400fa";
         public override void Validate(X509Certificate2 certificate) //sertifikat koji treba da se validuje-certificate
         {
-            X509Certificate2 cert = CertificateManager.GetCertificateFromStorage(StoreName.My, StoreLocation.LocalMachine,cliNameCrt,OU1,OU2);
+            X509Certificate2 cert = CertificateManager.GetCertificateFromStorage(StoreName.My, StoreLocation.LocalMachine,cliNameCrt);
           
 
             if (!certificate.Issuer.Equals(cert.Issuer)) //ako sertifikaciono tijelo sertifikata kojeg provjeravamo nije jednak sertifikacionom tijelu onog sertifikata za kojeg imamo podatke

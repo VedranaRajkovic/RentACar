@@ -14,12 +14,12 @@ namespace Client
     {
         private static void Main(string[] args)
         {
-            string srvCertCN = "wcfservice";
-            string OU1 = "korisnik"; //organization unit
-            string OU2 = "admin";
+            string srvCertCN = "wcfservicem";
+            //string OU1 = "admin"; //organization unit
+            //string OU2 = "clan";
             NetTcpBinding binding = new NetTcpBinding();
             binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
-            X509Certificate2 srvCert = CertificateManager.GetSingleCertificate(StoreName.My, StoreLocation.LocalMachine, srvCertCN,OU1,OU2);
+            X509Certificate2 srvCert = CertificateManager.GetCertificateFromStorage(StoreName.My, StoreLocation.LocalMachine, srvCertCN/*, OU1, OU2*/);
             EndpointAddress address = new EndpointAddress(new Uri("net.tcp://localhost:4000/WCFService"), //EndPointIdentity zbog obostrane autentifikacije
                                       new X509CertificateEndpointIdentity(srvCert)); //cer format sertifikata, jer klijent ne smije imati pristup pfx fajlu
             WCFClient c = new WCFClient(binding, address);

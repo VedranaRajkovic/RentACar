@@ -10,13 +10,13 @@ namespace SecurityManager
 {
     public class ClientCertificateValidator : X509CertificateValidator
     {
-        string srvCertCN = "wcfservice";
-        string OU1 = "korisnik";
-        string OU2 = "admin";
+        string srvCertCN = "wcfservicem";
+        string OU1 = "admin";
+        string OU2 = "clan";
         //string tpklijenta = "INVISIBLECHARACTER67416e1328388ecd1f229ace08a6fabca7f400fa";
         public override void Validate(X509Certificate2 certificate)
         {
-            X509Certificate2 cert = CertificateManager.GetCertificateFromStorage(StoreName.My, StoreLocation.LocalMachine, srvCertCN,OU1,OU2);
+            X509Certificate2 cert = CertificateManager.GetCertificateFromStorage(StoreName.My, StoreLocation.LocalMachine, srvCertCN);
           
 
             if (certificate.Issuer != cert.Issuer)
