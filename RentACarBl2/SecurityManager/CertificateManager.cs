@@ -37,12 +37,12 @@ namespace SecurityManager
 
         }
 
-        public static X509Certificate2 GetSingleCertificateFromStorage(StoreName storeName, StoreLocation storeLocation, string srvCertCN, string OU1, string OU2) //dodajem organization unit kao parametre
+        public static X509Certificate2 GetSingleCertificateFromStorage(StoreName storeName, StoreLocation storeLocation, string srvCertCN) //dodajem organization unit kao parametre
         {
             //string userCN = String.Format("CN={0}","OU={1}","OU={2}");
             string userCN = "CN=" + srvCertCN;
-            string orgUn1 = "OU1=" + OU1;
-            string orgUn2 = "OU2=" + OU2;
+            //string orgUn1 = "OU1=" + OU1;
+            //string orgUn2 = "OU2=" + OU2;
             X509Store store = new X509Store(storeName, storeLocation);
             store.Open(OpenFlags.ReadOnly);
             X509Certificate2 certificate = new X509Certificate2();
@@ -64,24 +64,24 @@ namespace SecurityManager
             foreach (X509Certificate2 cert in certCollection)
             {
                 string[] names = cert.Subject.Split('_');
-                string[] names1 = cert.Subject.Split('_');
-                string[] names2 = cert.Subject.Split('_');
+                //string[] names1 = cert.Subject.Split('_');
+                //string[] names2 = cert.Subject.Split('_');
 
                 if (names[0] == userCN)
                 {
                     certificate = cert;
                     break;
                 }
-                else if (names1[0] == OU1)
-                {
-                    certificate = cert;
-                    break;
-                }
-                else if (names2[0] == OU2)
-                {
-                    certificate = cert;
-                    break;
-                }
+                //else if (names1[0] == OU1)
+                //{
+                //    certificate = cert;
+                //    break;
+                //}
+                //else if (names2[0] == OU2)
+                //{
+                //    certificate = cert;
+                //    break;
+                //}
             }
                 return certificate;
             

@@ -46,5 +46,10 @@ namespace Contract
             this.ZlClan = zlClan;
             IznajmljeniAutomobili = new List<Rezervacija>();
         }
+
+        public Korisnik(string korisnickoIme)
+        {
+            this.korisnickoIme = korisnickoIme;
+        }
     }
 }

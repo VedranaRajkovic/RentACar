@@ -16,7 +16,10 @@ namespace Server
 
         public void RezervisiAutomobil(Rezervacija rezervacija)
         {
-            throw new NotImplementedException();
+            if (Podaci.automobili.ContainsKey(rezervacija.Registracija))
+            {
+                Podaci.rezervacijeNisuGotove.Add(rezervacija);
+            }
         }
     }
 }
