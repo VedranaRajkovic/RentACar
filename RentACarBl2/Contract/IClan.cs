@@ -12,6 +12,6 @@ namespace Contract
         [OperationContract]
         void RezervisiAutomobil(Rezervacija rezervacija);
         [OperationContract]
-        void PretraziZlClana(string korisnickoIme);
+        void PretraziZlClana(Korisnik korisnik);
     }
 }

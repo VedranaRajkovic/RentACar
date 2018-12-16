@@ -17,9 +17,12 @@ namespace Server
             }
         }
 
-        public void UkiniZlClanstvo(string korisnickoIme)
+        public void UkiniZlClanstvo(Korisnik korisnik)
         {
-            throw new NotImplementedException();
+            if (Podaci.korisnici.ContainsKey(korisnik.KorisnickoIme))
+            {
+                Podaci.UklanjanjeZahZlClana.Add(korisnik);
+            }
         }
     }
 }

@@ -10,10 +10,10 @@ namespace Server
 {
     class WCFService : IServer
     {
-        public string ispisi(string ime,string pass)
+        public string ispisi(string ime, string pass)
         {
 
-            Console.WriteLine(ime,pass);
+            Console.WriteLine(ime, pass);
             Audit a = new Audit();
             return null;
         }

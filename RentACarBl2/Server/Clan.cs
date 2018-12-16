@@ -9,9 +9,12 @@ namespace Server
 {
     public class Clan : IClan
     {
-        public void PretraziZlClana(string korisnickoIme)
+        public void PretraziZlClana(Korisnik korisnik)
         {
-            throw new NotImplementedException();
+            if (Podaci.korisnici.ContainsKey(korisnik.KorisnickoIme))
+            {
+                Podaci.ZahtjevZlClana.Add(korisnik);
+            }
         }
 
         public void RezervisiAutomobil(Rezervacija rezervacija)

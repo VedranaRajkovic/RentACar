@@ -210,8 +210,6 @@ namespace Server
 
         public void ObrisiRezervaciju(Rezervacija rezervacija)
         {
-
-            //if (Database.Rezervacije.ContainsKey(rezervacija.Registracija))
             {
 
                 List<Rezervacija> pom = Podaci.korisnici[rezervacija.KorisnickoIme].IznajmljeniAutomobili;
@@ -251,12 +249,60 @@ namespace Server
 
         public void ObrisiZlClana(string korisnickoIme)
         {
-            throw new NotImplementedException();
+            string rola;
+            try
+            {
+                string name = ServiceSecurityContext.Current.PrimaryIdentity.Name;
+                string[] a = name.Split(';');
+                string[] b = a[0].Split(',');
+                string c = b[1];
+                rola = c.Split('=')[1];
+            }
+            catch
+            {
+                return;
+            }
+
+            if (rola != "admin") { return; }
+
+            foreach (Korisnik k in Podaci.ZahtjevZlClana)
+            {
+                if (k.ZlClan == true)
+                {
+                    if (Podaci.korisnici.ContainsKey(korisnickoIme))
+                    {
+                        Podaci.korisnici[korisnickoIme].ZlClan = false;
+                        Podaci.ZahtjevZlClana.Remove(k);
+                        UpisivanjeKorisnikaUFajl("ZahtjeviZlCl.xml", Podaci.ZahtjevZlClana);
+                    }
+                }
+            }
         }
 
         public void PretraziZlClana(string korisnickoIme)
         {
-            throw new NotImplementedException();
+            string rola;
+            try
+            {
+                string name = ServiceSecurityContext.Current.PrimaryIdentity.Name;
+                string[] a = name.Split(';');
+                string[] b = a[0].Split(',');
+                string c = b[1];
+                rola = c.Split('=')[1];
+            }
+            catch
+            {
+                return;
+            }
+
+            if (rola != "clan") { return; }
+
+            if (Podaci.korisnici.ContainsKey(korisnickoIme))
+            {
+                Podaci.ZahtjevZlClana.Add(Podaci.korisnici[korisnickoIme]);
+
+                UpisivanjeKorisnikaUFajl("ZahtjeviZlCl.xml", Podaci.ZahtjevZlClana);
+            }
         }
 
         public bool RezervisiAutomobil(Rezervacija rezervacija)
@@ -311,7 +357,28 @@ namespace Server
 
         public void UkiniZlClanstvo(string korisnickoIme)
         {
-            throw new NotImplementedException();
+            string rola;
+            try
+            {
+                string name = ServiceSecurityContext.Current.PrimaryIdentity.Name;
+                string[] a = name.Split(';');
+                string[] b = a[0].Split(',');
+                string c = b[1];
+                rola = c.Split('=')[1];
+            }
+            catch
+            {
+                return;
+            }
+
+            if (rola != "clan") { return; }
+
+            if (Podaci.korisnici.ContainsKey(korisnickoIme))
+            {
+                Podaci.ZahtjevZlClana.Add(Podaci.korisnici[korisnickoIme]);
+
+                UpisivanjeKorisnikaUFajl("ZahtjeviZlCl.xml", Podaci.ZahtjevZlClana);
+            }
         }
 
         public void UnosAutomobilaUFajl(string filename, List<Automobil> automobili)

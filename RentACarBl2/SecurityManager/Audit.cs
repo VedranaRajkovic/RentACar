@@ -18,6 +18,7 @@ namespace SecurityManager
         {
             try
             {
+                //pravi se customLog handle
                 if (!EventLog.SourceExists(sourceName))
                 {
                     EventLog.CreateEventSource(sourceName, logName);
@@ -28,15 +29,64 @@ namespace SecurityManager
             catch (Exception e)
             {
                 customLog = null;
-
-                Console.WriteLine("Error while trying to create log handle. Error: {0}.", e.Message);
+                Console.WriteLine("Error while trying to create log handle. Error = {0}", e.Message);
             }
         }
-        //biljezim dogadjaj, imam poruku o dogadjaju koju je potrebno upisati u log
-        public static void AnnotateEvent(string message)
+
+        public static void AuthenticationSuccess(string userName)
         {
-            customLog.WriteEntry(message);
+            if (customLog != null)
+            {
+                //poziva metodu AuditEvents da bi ispisao poruku u Log fajl
+                customLog.WriteEntry(string.Format(AuditEvents.UserAuthenticationSuccess, userName), EventLogEntryType.SuccessAudit);
+            }
+            else
+            {
+                throw new ArgumentException(string.Format("Error while trying to write event with id {0} to event log", (int)AuditEventTypes.UserAuthenticationSuccess));
+            }
         }
+
+        public static void AuthenticationFailed(string userName)
+        {
+            if (customLog != null)
+            {
+                //poziva metodu AuditEvents da bi ispisao poruku u Log fajl
+                customLog.WriteEntry(string.Format(AuditEvents.UserAuthenticationFailed, userName), EventLogEntryType.SuccessAudit);
+            }
+            else
+            {
+                throw new ArgumentException(string.Format("Error while trying to write event with id {0} to event log", (int)AuditEventTypes.UserAuthenticationFailed));
+            }
+        }
+
+        public static void AuthorizationSuccess(string userName, string serviceName)
+        {
+            if (customLog != null)
+            {
+                //poziva metodu AuditEvents da bi ispisao poruku u Log fajl
+                customLog.WriteEntry(string.Format(AuditEvents.UserAuthorizationSuccess, userName, serviceName), EventLogEntryType.SuccessAudit);
+            }
+            else
+            {
+                throw new ArgumentException(string.Format("Error while trying to write event with id {0} to event log", (int)AuditEventTypes.UserAuthorizationSuccess));
+            }
+        }
+
+        public static void AuthorizationFailed(string userName, string serviceName, string reason)
+        {
+            if (customLog != null)
+            {
+                //poziva metodu AuditEvents da bi ispisao poruku u Log fajl
+                customLog.WriteEntry(string.Format(AuditEvents.UserAuthorizationFailed, userName, serviceName, reason), EventLogEntryType.Error);
+            }
+            else
+            {
+                throw new ArgumentException(string.Format("Error while trying to write event with id {0} to event log", (int)AuditEventTypes.UserAuthorizationFailed));
+            }
+        }
+
+
+
         public void Dispose()
         {
             if (customLog != null)
